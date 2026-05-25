@@ -1,0 +1,634 @@
+/* universal aniwa danna */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.3;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*navigation tika*/
+header {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+}
+/*google font eka*/
+@font-face {
+  font-family: fontnew;
+  src: url(fontnew.ttf);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  flex-direction: row;
+  word-spacing: -7px;
+}
+.T {
+  font-family: fontnew;
+  font-size: 150%;
+  font-style: italic;
+  font-weight: bolder;
+  color: #63a9fe;
+}
+.Z {
+  font-family: fontnew;
+  color: rgb(255, 255, 255);
+}
+.logo:hover {
+  color: #63a9fe;
+  transition: 0.2s ease-in all;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #63a9fe;
+}
+
+.signup {
+  background-color: #dc3545;
+
+  color: rgb(255, 253, 253);
+  padding: 5px 15px 7px;
+  border-radius: 5px;
+}
+.signup:hover {
+  background-color: #7c0c17;
+  color: #ffffff;
+}
+
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  /*footer eka yatata yawanna*/
+  flex: 1;
+}
+
+.category-section {
+  margin-bottom: 60px;
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
+.category-section h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  border-bottom: 3px solid #00ffcc;
+  display: inline-block;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+}
+
+/*grid tika*/
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/*card tika*/
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #005f73;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.95rem;
+  flex-grow: 1; /* poddainm yatata ywnwa price eka*/
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+/*thiyeda nadda*/
+.availability {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.in-stock {
+  background-color: #e6f9e6;
+  color: #28a745;
+}
+
+.low-stock {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.out-stock {
+  background-color: #f8d7da;
+  color: #dc3545;
+}
+
+/* palaweni eka*/
+.banner {
+ 
+  position: relative;
+  background-image: url("Images/main/sales.jpg");
+  background-size: cover; 
+  background-position: center; */
+
+  background-repeat: no-repeat;
+  width: 100%; 
+  padding: 10px 10px; 
+
+ 
+  color: white;
+  text-align: center;
+  padding: 130px 25px; 
+
+  
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.banner-text {
+  text-align: left;
+}
+
+.banner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #f7d230;
+  color: #000000;
+  padding: 10px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  z-index: 2;
+  position: relative;
+}
+
+.btn:hover {
+  background-color: #585303;
+  color: #ffffff;
+}
+
+/*deweni eka*/
+.banner2 {
+  position: relative;
+  background-image: url("Images/main/build.png");
+  background-size: cover;
+  background-position: center;
+
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 10px 10px;
+
+  color: white;
+  text-align: right;
+  padding: 100px 25px;
+  margin: 0;
+}
+.banner2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.banner2-text {
+  text-align: right;
+  z-index: 2;
+}
+
+.banner2 h2 {
+  font-size: 4.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.banner2 p {
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+.top-line {
+  margin-bottom: -25px;
+}
+.bottom-line {
+  margin-top: -25px;
+}
+.btn2 {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  z-index: 2;
+  position: relative;
+}
+
+.btn2:hover {
+  background-color: #242425;
+  color: #ffffff;
+}
+/*thuweni eka*/
+.showcase-container {
+ position: relative;
+    background: url(Images/tech.jpg);
+    padding: 25px 40px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: cover;
+  background-position: center;
+  
+color: #ffffff;
+
+  background-repeat: no-repeat;
+  width: 100%;
+ }
+.showcase-container::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+}
+
+
+.showcase-inner h2 {
+  position: relative;
+    text-align: center;
+    color: #d3be00;
+    margin-bottom: 50px;
+    z-index: 10;
+    font-size: 70px;
+    z-index: 2;
+}
+.deals2{
+  position: relative;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 50px;
+    z-index: 10;
+    font-size: 70px;
+    z-index: 2;
+}
+
+.laptop-layout {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap; 
+}
+
+
+
+.laptop-item {
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(109, 2, 68, 0.685); 
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.laptop-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.laptop-item img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+
+}
+
+
+.laptop-item h3 {
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 10px 0;
+}
+
+
+.cost-tag {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #790202; 
+    text-decoration: line-through;
+}
+.recost-tag{
+  font-size: 1.1rem;
+    font-weight: bold;
+    color: #000000; 
+    
+}
+
+
+/*sign up page eka*/
+.signuppage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-image: url(Images/12.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.signuppage::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+}
+
+.wrapper {
+  width: 420px;
+  background: transparent;
+  color: #ffffff;
+  border-radius: 40px;
+  padding: 30px 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+.wrapper .input-box {
+  width: 100%;
+  height: 50px;
+
+  margin: 30px 0;
+}
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  color: #ffffff;
+  padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder {
+  color: #ffffff;
+}
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+}
+.wrapper .btn:hover {
+  background-color: #a5a3a3;
+}
+.wrapper .register-link {
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+.register-link p a {
+  color: #81a6f7;
+  text-decoration: none;
+  font-weight: 600;
+}
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+/*Footer eka*/
+footer {
+
+  background-color: #000000f3;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 0px;
+}
+
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  z-index: 2;
+}
+.app-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  height: 25%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  padding: px;
+  margin-top: 0px;
+}
+
+.app-info {
+  width: 30%;
+  text-align: left;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.app-info h2 {
+  color: #fff;
+}
+.app-info p {
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-right: 40px;
+}
+
+.action-header {
+  color: #fff;
+}
+
+.unordered-list {
+  list-style: none;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.unordered-list li {
+  margin-bottom: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+a:hover {
+  color: #63a9fe;
+  transition: 0.2s ease-in all;
+}
+
+.social-icons img {
+  width: 20px;
+  margin-right: 16px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.copyright {
+  font-size: 14px;
+  margin: 4px 0 20px 0;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }}
