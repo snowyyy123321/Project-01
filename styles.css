@@ -632,3 +632,7 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
   }}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
